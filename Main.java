@@ -19,7 +19,7 @@ public class Main {
     }
 
     public static void insertarLibro(){
-        libro libro = new Libro();
+        libro libro = new libro();
         libro.setTitulo("El principito");
         libro.setIsbn("978-3-16-148410-0");
         libro.setAnioPublicacion(1943);
