@@ -1,21 +1,23 @@
 package models;
 
-import java.util.Date;
+import java.time.*;
 
-public class autor /*extends persona*/ {
+public class Autor extends Persona {
     
-   // private persona persona;
-    private Date fechaNacimiento;
-    private String nacionalidad;
+    public LocalDate fechaNacimiento;
+    public String nacionalidad;
+    public String nombreAlias;
 
-    public autor(Date fechaNacimiento, String nacionalidad) {
+    public Autor(LocalDate fechaNacimiento, String nacionalidad, String nombre, String apellido, String nombreAlias) {
+        super(nombre, apellido);
         this.fechaNacimiento = fechaNacimiento;
         this.nacionalidad = nacionalidad;
+        this.nombreAlias = nombreAlias;
     }
 
     // Getters
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -23,13 +25,21 @@ public class autor /*extends persona*/ {
         return nacionalidad;
     }
 
+    public String getNombreAlias() {
+        return nombreAlias;
+    }
+
     // Setters
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public void setNacionalidad(String nombre) {
+    public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
+    }
+
+    public void setNombreAlias(String nombreAlias) {
+        this.nombreAlias = nombreAlias;
     }
 }

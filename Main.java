@@ -1,29 +1,23 @@
-import models.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import models.Libro;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
-        insertarLibro();;
-        listarLibros();
-        
+        List<Libro> libros = new ArrayList<Libro>();
+        insertarLibro(libros);
+        listarlibros(libros);
     }
 
-    public static void listarLibros(){
-        libro libro = new Libro();
-        List<libro> libros = libro.listar();
-        for (libro libro : libros) {
-            System.out.println(libro.getTitulo());
-        }
+    public static void insertarLibro(List<Libro> libros){   
+        Libro libro = new Libro("Clean Code:A Handbook of Agile Software Craftsmanship", "9780132350884", 2008, LocalDate.of(1952,12,17),"Rober C.Martin","Robert","Martin","Estadounidense");
+        Libro.insertarLibro(libros,libro);
+    } 
 
-        System.out.println("--------------------");
-    }
-
-    public static void insertarLibro(){
-        libro libro = new libro();
-        libro.setTitulo("El principito");
-        libro.setIsbn("978-3-16-148410-0");
-        libro.setAnioPublicacion(1943);
-        //libro.setAutor("Antoine de Saint-Exupéry");
-        libro.insertar();
+    public static void listarlibros(List<Libro> libros){
+        Libro.listarlibros(libros);
     }
 }
+
+

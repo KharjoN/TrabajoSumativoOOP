@@ -2,14 +2,14 @@ package models;
 
 import java.util.Date;
 
-public class prestamo /*extends usuario, libro*/{
+public class Prestamo{
 
     private Date fecha_prestamo;
     private Date fecha_devolucion;
-    private libro libro;
-    private usuario usuario;
+    private Libro libro;
+    private Usuario usuario;
 
-    public prestamo(Date fecha_prestamo, Date fecha_devolucion, libro libro, usuario usuario) {
+    public Prestamo(Date fecha_prestamo, Date fecha_devolucion, Libro libro, Usuario usuario) {
         this.fecha_prestamo = fecha_prestamo;
         this.fecha_devolucion = fecha_devolucion;
         this.libro = libro;
@@ -25,11 +25,11 @@ public class prestamo /*extends usuario, libro*/{
         return fecha_devolucion;
     }
 
-    public libro getLibro() {
+    public Libro getLibro() {
         return libro;
     }
 
-    public usuario getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
@@ -43,11 +43,11 @@ public class prestamo /*extends usuario, libro*/{
         this.fecha_devolucion = fecha_devolucion;
     }
 
-    public void setLibro(libro libro) {
+    public void setLibro(Libro libro) {
         this.libro = libro;
     }
 
-    public void setUsuario(usuario usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 

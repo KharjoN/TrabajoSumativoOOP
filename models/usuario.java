@@ -1,10 +1,11 @@
 package models;
 
-public class usuario {
+public class Usuario extends Persona {
     private String numeroIdentificacion;
     private String email;
 
-    public usuario(String numeroIdentificacion, String email) {
+    public Usuario(String numeroIdentificacion, String email, String nombre, String apellido) {
+        super(nombre, apellido);
         this.numeroIdentificacion = numeroIdentificacion;
         this.email = email;
     }

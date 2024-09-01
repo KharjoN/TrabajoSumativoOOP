@@ -1,17 +1,19 @@
 package models;
+import java.time.*;
+import java.util.*;
 
-public class libro /*extends autor*/ {
+public class Libro extends Autor {
 
     private String titulo;
     private String isbn;
     private int anioPublicacion;
-    private autor autor;
-
-    public libro(String titulo, String isbn, int anioPublicacion, autor autor) {
+    
+    
+    public Libro(String titulo, String isbn, int anioPublicacion, LocalDate fechaNacimiento,String nombreAlias,String nombre, String apellido, String nacionalidad) {
+        super(fechaNacimiento, nacionalidad, nombre, apellido, nombreAlias);
         this.titulo = titulo;
         this.isbn = isbn;
         this.anioPublicacion = anioPublicacion;
-        this.autor = autor;
     }
 
     //Getters
@@ -28,8 +30,9 @@ public class libro /*extends autor*/ {
         return anioPublicacion;
     }
 
-    public autor getAutor() {
-        return autor;
+    @Override
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
     //Setters
@@ -46,14 +49,28 @@ public class libro /*extends autor*/ {
         this.anioPublicacion = anioPublicacion;
     }
 
-    public void setAutor(autor autor) {
-        this.autor = autor;
+    @Override
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     //Metodos
 
-    public void insertar() {
-        System.out.println("Insertando libro: ");
+    public static void insertarLibro(List<Libro> libros,Libro libro) {
+        libros.add(libro);
     }
-    
+
+    public static void listarlibros(List<Libro> libros) {
+        for (Libro libro : libros) {
+            System.out.println(libro.getTitulo());
+            System.out.println(libro.getIsbn());
+            System.out.println(libro.getAnioPublicacion());
+            System.out.println(libro.getNombre());
+            System.out.println(libro.getApellido());
+            System.out.println(libro.getNombreAlias());
+            System.out.println(libro.getNacionalidad());
+        }
+    }
 }
+
+

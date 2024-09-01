@@ -1,10 +1,10 @@
 package models;
 
-public class persona {
-    private String nombre;
-    private String apellido;
+public class Persona {
+    public String nombre;
+    public String apellido;
 
-    public persona(String nombre, String apellido) {
+    public Persona(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
