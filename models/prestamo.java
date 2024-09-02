@@ -2,20 +2,19 @@ package models;
 
 import java.time.*;
 
-public class Prestamo{
+//Solo inlcuimos la clase Usuario para poder heredar de ella, no usamos la clase libro.
+
+public class Prestamo extends Usuario {
 
     private LocalDate fecha_prestamo;
     private LocalDate fecha_devolucion;
-    private Libro libro;
-    private Usuario usuario;
 
-    public Prestamo(LocalDate fecha_prestamo, LocalDate fecha_devolucion, Libro libro, Usuario usuario) {
+    public Prestamo(LocalDate fecha_prestamo, LocalDate fecha_devolucion, int numeroIdentificacion, String email, String nombre, String apellido) {
+        super(numeroIdentificacion, email, nombre, apellido);
         this.fecha_prestamo = fecha_prestamo;
         this.fecha_devolucion = fecha_devolucion;
-        this.libro = libro;
-        this.usuario = usuario;
+        
     }
-    
     // Getters
     public LocalDate getFecha_prestamo() {
         return fecha_prestamo;
@@ -25,13 +24,6 @@ public class Prestamo{
         return fecha_devolucion;
     }
 
-    public Libro getLibro() {
-        return libro;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
 
     // Setters
 
@@ -43,13 +35,4 @@ public class Prestamo{
         this.fecha_devolucion = fecha_devolucion;
     }
 
-    public void setLibro(Libro libro) {
-        this.libro = libro;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    
 }

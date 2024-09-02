@@ -29,10 +29,9 @@ public class Libro extends Autor {
     public int getAnioPublicacion() {
         return anioPublicacion;
     }
-
-    @Override
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
+ 
+    public String getAutor() {
+        return nombreAlias;
     }
 
     //Setters
@@ -49,6 +48,9 @@ public class Libro extends Autor {
         this.anioPublicacion = anioPublicacion;
     }
 
+    public void setAutor(String nombreAlias) {
+        this.nombreAlias = nombreAlias;
+    }
 
     //Metodos
 
