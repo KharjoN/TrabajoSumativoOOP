@@ -1,15 +1,15 @@
 package models;
 
-import java.util.Date;
+import java.time.*;
 
 public class Prestamo{
 
-    private Date fecha_prestamo;
-    private Date fecha_devolucion;
+    private LocalDate fecha_prestamo;
+    private LocalDate fecha_devolucion;
     private Libro libro;
     private Usuario usuario;
 
-    public Prestamo(Date fecha_prestamo, Date fecha_devolucion, Libro libro, Usuario usuario) {
+    public Prestamo(LocalDate fecha_prestamo, LocalDate fecha_devolucion, Libro libro, Usuario usuario) {
         this.fecha_prestamo = fecha_prestamo;
         this.fecha_devolucion = fecha_devolucion;
         this.libro = libro;
@@ -17,11 +17,11 @@ public class Prestamo{
     }
     
     // Getters
-    public Date getFecha_prestamo() {
+    public LocalDate getFecha_prestamo() {
         return fecha_prestamo;
     }
 
-    public Date getFecha_devolucion() {
+    public LocalDate getFecha_devolucion() {
         return fecha_devolucion;
     }
 
@@ -35,11 +35,11 @@ public class Prestamo{
 
     // Setters
 
-    public void setFecha_prestamo(Date fecha_prestamo) {
+    public void setFecha_prestamo(LocalDate fecha_prestamo) {
         this.fecha_prestamo = fecha_prestamo;
     }
 
-    public void setFecha_devolucion(Date fecha_devolucion) {
+    public void setFecha_devolucion(LocalDate fecha_devolucion) {
         this.fecha_devolucion = fecha_devolucion;
     }
 

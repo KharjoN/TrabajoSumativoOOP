@@ -1,17 +1,17 @@
 package models;
-
+import java.util.*;
 public class Usuario extends Persona {
-    private String numeroIdentificacion;
+    private int numeroIdentificacion;
     private String email;
 
-    public Usuario(String numeroIdentificacion, String email, String nombre, String apellido) {
+    public Usuario(int numeroIdentificacion, String email, String nombre, String apellido) {
         super(nombre, apellido);
         this.numeroIdentificacion = numeroIdentificacion;
         this.email = email;
     }
 
     // Getters
-    public String getNumeroIdentificacion() {
+    public int getNumeroIdentificacion() {
         return numeroIdentificacion;
     }
 
@@ -21,7 +21,7 @@ public class Usuario extends Persona {
 
     // Setters
 
-    public void setNumeroIdentificacion(String numeroIdentificacion) {
+    public void setNumeroIdentificacion(int numeroIdentificacion) {
         this.numeroIdentificacion = numeroIdentificacion;
     }
 
@@ -29,6 +29,27 @@ public class Usuario extends Persona {
         this.email = email;
     }
 
- 
+    //Metodos
+
+    public static void insertarUsuario(List<Usuario> usuarios,Usuario usuario) {
+        usuarios.add(usuario);
+    }
+
+    public static void listarUsuarios(List<Usuario> usuarios) {
+        int numero = 1;
+        System.out.println("Lista de usuarios:");
+        System.out.println("-----------------");
+        for (Usuario usuario : usuarios) {
+            System.out.println("Usuario numero: " + numero);
+            System.out.println("-----------------");
+            System.out.println("Nombre: " + usuario.getNombre());
+            System.out.println("Apellido: " + usuario.getApellido());
+            System.out.println("Numero de identificacion: " + usuario.getNumeroIdentificacion());
+            System.out.println("Email: " + usuario.getEmail());
+            System.out.println("-----------------");
+            numero++;
+            
+        }
+    }
 
 }

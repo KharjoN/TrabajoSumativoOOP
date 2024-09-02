@@ -49,10 +49,6 @@ public class Libro extends Autor {
         this.anioPublicacion = anioPublicacion;
     }
 
-    @Override
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
 
     //Metodos
 
@@ -61,14 +57,22 @@ public class Libro extends Autor {
     }
 
     public static void listarlibros(List<Libro> libros) {
+        int numero = 1;
+        System.out.println("Lista de libros:");
+        System.out.println("-----------------");
         for (Libro libro : libros) {
-            System.out.println(libro.getTitulo());
-            System.out.println(libro.getIsbn());
-            System.out.println(libro.getAnioPublicacion());
-            System.out.println(libro.getNombre());
-            System.out.println(libro.getApellido());
-            System.out.println(libro.getNombreAlias());
-            System.out.println(libro.getNacionalidad());
+            System.out.println("Libro " + numero);
+            System.err.println("-----------------");
+            System.out.println("Titulo: " + libro.getTitulo());
+            System.out.println("ISBN: " + libro.getIsbn());
+            System.out.println("Año Publicacion: " + libro.getAnioPublicacion());
+            System.out.println("Nombre: " + libro.getNombre());
+            System.out.println("Apellido: " + libro.getApellido());
+            System.out.println("Alias: " + libro.getNombreAlias());
+            System.out.println("Nacionalidad: " + libro.getNacionalidad());
+            System.out.println("-----------------");
+            numero++;
+
         }
     }
 }
